@@ -23,7 +23,7 @@ const { createApp } = Vue
               })
         },
         getProducts(){
-            const url = `${this.apiUrl}/api/${this.apiPath}/admin/products/`
+            const url = `${this.apiUrl}/api/${this.apiPath}/admin/products/all`
             axios.get(url)
             .then((res)=>{
                 this.products = res.data.products;
