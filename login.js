@@ -101,13 +101,15 @@ const { createApp } = Vue
             axios.post(url, this.user)
             .then((res)=>{
                 const {token, expired} = res.data;
+                console.log(token, expired)
                 document.cookie = `hexToken=${token}; expires=${new Date(expired)};`;
                 window.location = "index.html";
             })
             .catch((err)=>{
                 console.log(err)
             })
-        } else {
+        } 
+        else {
             alert('請輸入帳號和密碼')
             return
         }
@@ -116,3 +118,19 @@ const { createApp } = Vue
 
     
   }).mount('#app')
+
+
+// const app = createApp({
+//     data(){
+//         return {
+//             text: '123'
+//         }
+//     },
+//     methods:{
+
+//     },
+//     mouted(){
+
+//     }
+// });
+// app.mount('#app')

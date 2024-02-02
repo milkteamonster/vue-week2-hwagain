@@ -23,7 +23,7 @@ const { createApp } = Vue
               })
         },
         getProducts(){
-            const url = `${this.apiUrl}/api/${this.apiPath}/admin/products/all`
+            const url = `${this.apiUrl}/api/${this.apiPath}/admin/products/all` //這裡response的原始格式是物件，html要顯示的話要轉Object.keys(products).length
             axios.get(url)
             .then((res)=>{
                 this.products = res.data.products;
